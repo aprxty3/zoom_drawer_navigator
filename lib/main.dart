@@ -37,17 +37,14 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
       body: ZoomDrawer(
         controller: drawerController,
-        style: DrawerStyle.Style1,
+        style: DrawerStyle.DefaultStyle,
         menuScreen: MenuPage(),
-        mainScreen: MainPage(),
+        mainScreen: MainPage(drawerController),
         borderRadius: 24,
         showShadow: true,
-        angle: 2.0,
+        angle: 0.0,
         backgroundColor: Colors.grey[300]!,
         slideWidth: MediaQuery.of(context).size.width * 0.65,
         openCurve: Curves.fastOutSlowIn,
